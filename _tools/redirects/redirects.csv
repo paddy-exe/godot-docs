@@ -1,8 +1,8 @@
 source,destination
 /classes/_classes.html,/classes/
 /community/tutorials/3d/mesh_generation_with_heightmap_and_shaders.html,/tutorials/3d/mesh_generation_with_heightmap_and_shaders.html
-/community/tutorials/gdnative/gdnative-c-example.html,/tutorials/plugins/gdnative/gdnative-c-example.html
-/community/tutorials/gdnative/index.html,/tutorials/plugins/gdnative/index.html
+/community/tutorials/gdextension/gdextension-c-example.html,/tutorials/plugins/gdextension/gdextension-c-example.html
+/community/tutorials/gdextension/index.html,/tutorials/plugins/gdextension/index.html
 /community/tutorials/vr/index.html,/tutorials/vr/index.html
 /community/tutorials/vr/vr_primer.html,/tutorials/vr/vr_primer.html
 /content/3d/making_trees.html,/tutorials/content/making_trees.html
@@ -310,9 +310,9 @@ source,destination
 /tutorials/platform/android_in_app_purchases.html,/tutorials/platform/android/android_in_app_purchases.html
 /tutorials/plugins/android/android_plugin.html,/tutorials/platform/android/android_plugin.html
 /tutorials/plugins/android/index.html,/tutorials/platform/android/index.html
-/tutorials/plugins/gdnative/gdnative-c-example.html,/tutorials/scripting/gdnative/gdnative_c_example.html
-/tutorials/plugins/gdnative/gdnative-cpp-example.html,/tutorials/scripting/gdnative/gdnative_cpp_example.html
-/tutorials/plugins/gdnative/index.html,/tutorials/scripting/gdnative/index.html
+/tutorials/plugins/gdextension/gdextension-c-example.html,/tutorials/scripting/gdextension/gdextension_c_example.html
+/tutorials/plugins/gdextension/gdextension-cpp-example.html,/tutorials/scripting/gdextension/gdextension_cpp_example.html
+/tutorials/plugins/gdextension/index.html,/tutorials/scripting/gdextension/index.html
 /tutorials/shading/advanced_postprocessing.html,/tutorials/shaders/advanced_postprocessing.html
 /tutorials/shading/godot_shader_language_style_guide.html,/tutorials/shaders/shaders_style_guide.html
 /tutorials/shading/index.html,/tutorials/shaders/index.html

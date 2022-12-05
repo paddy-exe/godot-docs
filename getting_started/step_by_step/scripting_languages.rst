@@ -124,10 +124,10 @@ or ClojureCLR. However, C# is the only officially supported .NET option.
           in GDScript, C#, or C++ won't have a significant impact on
           performance.
 
-C and C++ via GDExtension
+C++ via GDExtension
 ~~~~~~~~~~~~~~~~~~~~~~~~~
 
-GDExtension allows you to write game code in C or C++ without needing to recompile
+GDExtension allows you to write game code in C++ without needing to recompile
 or even restart Godot.
 
 .. image:: img/scripting_cpp.png
