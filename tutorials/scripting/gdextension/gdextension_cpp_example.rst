@@ -181,6 +181,8 @@ GDExtension node we'll be creating. We will name it ``gdexample.h``:
         void _init(); // our initializer called by Godot
 
         void _process(float delta);
+        
+        void move(float delta);
     };
 
     }
@@ -221,7 +223,7 @@ Let's implement our functions by creating our ``gdexample.cpp`` file:
     using namespace godot;
 
     void GDExample::_bind_methods() {
-        ClassDB::bind_method(D_METHOD("_process"), &GDExample::_process);
+        ClassDB::bind_method(D_METHOD("move"), &GDExample::move);
     }
 
     GDExample::GDExample() {
@@ -232,8 +234,12 @@ Let's implement our functions by creating our ``gdexample.cpp`` file:
     GDExample::~GDExample() {
         // add your cleanup here
     }
-
+    
     void GDExample::_process(float delta) {
+        move(delta);
+    }
+
+    void GDExample::move(float delta) {
         time_passed += delta;
 
         Vector2 new_position = Vector2(10.0 + (10.0 * sin(time_passed * 2.0)), 10.0 + (10.0 * cos(time_passed * 1.5)));
