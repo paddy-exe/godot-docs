@@ -68,6 +68,8 @@ Methods
    +-------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | void                                                              | :ref:`erase_button<class_TreeItem_method_erase_button>` **(** :ref:`int<class_int>` column, :ref:`int<class_int>` button_index **)**                                                                                                                     |
    +-------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`AutowrapMode<enum_TextServer_AutowrapMode>`                 | :ref:`get_autowrap_mode<class_TreeItem_method_get_autowrap_mode>` **(** :ref:`int<class_int>` column **)** |const|                                                                                                                                       |
+   +-------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`Texture2D<class_Texture2D>`                                 | :ref:`get_button<class_TreeItem_method_get_button>` **(** :ref:`int<class_int>` column, :ref:`int<class_int>` button_index **)** |const|                                                                                                                 |
    +-------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`int<class_int>`                                             | :ref:`get_button_by_id<class_TreeItem_method_get_button_by_id>` **(** :ref:`int<class_int>` column, :ref:`int<class_int>` id **)** |const|                                                                                                               |
@@ -173,6 +175,8 @@ Methods
    | void                                                              | :ref:`remove_child<class_TreeItem_method_remove_child>` **(** :ref:`TreeItem<class_TreeItem>` child **)**                                                                                                                                                |
    +-------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | void                                                              | :ref:`select<class_TreeItem_method_select>` **(** :ref:`int<class_int>` column **)**                                                                                                                                                                     |
+   +-------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | void                                                              | :ref:`set_autowrap_mode<class_TreeItem_method_set_autowrap_mode>` **(** :ref:`int<class_int>` column, :ref:`AutowrapMode<enum_TextServer_AutowrapMode>` autowrap_mode **)**                                                                              |
    +-------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | void                                                              | :ref:`set_button<class_TreeItem_method_set_button>` **(** :ref:`int<class_int>` column, :ref:`int<class_int>` button_index, :ref:`Texture2D<class_Texture2D>` button **)**                                                                               |
    +-------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -473,6 +477,18 @@ Deselects the given column.
 void **erase_button** **(** :ref:`int<class_int>` column, :ref:`int<class_int>` button_index **)**
 
 Removes the button at index ``button_index`` in column ``column``.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_TreeItem_method_get_autowrap_mode:
+
+.. rst-class:: classref-method
+
+:ref:`AutowrapMode<enum_TextServer_AutowrapMode>` **get_autowrap_mode** **(** :ref:`int<class_int>` column **)** |const|
+
+Returns the text autowrap mode in the given ``column``. By default it is :ref:`TextServer.AUTOWRAP_OFF<class_TextServer_constant_AUTOWRAP_OFF>`.
 
 .. rst-class:: classref-item-separator
 
@@ -1138,6 +1154,18 @@ Selects the given ``column``.
 
 ----
 
+.. _class_TreeItem_method_set_autowrap_mode:
+
+.. rst-class:: classref-method
+
+void **set_autowrap_mode** **(** :ref:`int<class_int>` column, :ref:`AutowrapMode<enum_TextServer_AutowrapMode>` autowrap_mode **)**
+
+Sets the autowrap mode in the given ``column``. If set to something other than :ref:`TextServer.AUTOWRAP_OFF<class_TextServer_constant_AUTOWRAP_OFF>`, the text gets wrapped inside the cell's bounding rectangle.
+
+.. rst-class:: classref-item-separator
+
+----
+
 .. _class_TreeItem_method_set_button:
 
 .. rst-class:: classref-method
@@ -1552,3 +1580,4 @@ void **uncollapse_tree** **(** **)**
 .. |constructor| replace:: :abbr:`constructor (This method is used to construct a type.)`
 .. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`
 .. |operator| replace:: :abbr:`operator (This method describes a valid operator to use with this type as left-hand operand.)`
+.. |bitfield| replace:: :abbr:`BitField (This value is an integer composed as a bitmask of the following flags.)`

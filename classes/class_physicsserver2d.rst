@@ -2437,7 +2437,7 @@ Sets the shape data that defines the configuration of the shape. The ``data`` to
 
 - :ref:`SHAPE_CONCAVE_POLYGON<class_PhysicsServer2D_constant_SHAPE_CONCAVE_POLYGON>`: a :ref:`PackedVector2Array<class_PackedVector2Array>` of length divisible by two (each pair of points forms one segment).
 
-\ **Warning**: In the case of :ref:`SHAPE_CONVEX_POLYGON<class_PhysicsServer2D_constant_SHAPE_CONVEX_POLYGON>`, this method does not check if the points supplied actually form a convex polygon (unlike the :ref:`CollisionPolygon2D.polygon<class_CollisionPolygon2D_property_polygon>` property).
+\ **Warning:** In the case of :ref:`SHAPE_CONVEX_POLYGON<class_PhysicsServer2D_constant_SHAPE_CONVEX_POLYGON>`, this method does not check if the points supplied actually form a convex polygon (unlike the :ref:`CollisionPolygon2D.polygon<class_CollisionPolygon2D_property_polygon>` property).
 
 .. rst-class:: classref-item-separator
 
@@ -2529,3 +2529,4 @@ Creates a 2D world boundary shape in the physics server, and returns the :ref:`R
 .. |constructor| replace:: :abbr:`constructor (This method is used to construct a type.)`
 .. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`
 .. |operator| replace:: :abbr:`operator (This method describes a valid operator to use with this type as left-hand operand.)`
+.. |bitfield| replace:: :abbr:`BitField (This value is an integer composed as a bitmask of the following flags.)`

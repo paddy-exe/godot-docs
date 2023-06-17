@@ -367,6 +367,8 @@ Properties
    +-------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`int<class_int>`         | :ref:`run/output/font_size<class_EditorSettings_property_run/output/font_size>`                                                                                                     |
    +-------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`int<class_int>`         | :ref:`run/window_placement/android_window<class_EditorSettings_property_run/window_placement/android_window>`                                                                       |
+   +-------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`int<class_int>`         | :ref:`run/window_placement/rect<class_EditorSettings_property_run/window_placement/rect>`                                                                                           |
    +-------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`Vector2<class_Vector2>` | :ref:`run/window_placement/rect_custom_position<class_EditorSettings_property_run/window_placement/rect_custom_position>`                                                           |
@@ -396,6 +398,8 @@ Properties
    | :ref:`bool<class_bool>`       | :ref:`text_editor/appearance/gutters/show_info_gutter<class_EditorSettings_property_text_editor/appearance/gutters/show_info_gutter>`                                               |
    +-------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`bool<class_bool>`       | :ref:`text_editor/appearance/gutters/show_line_numbers<class_EditorSettings_property_text_editor/appearance/gutters/show_line_numbers>`                                             |
+   +-------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`int<class_int>`         | :ref:`text_editor/appearance/lines/autowrap_mode<class_EditorSettings_property_text_editor/appearance/lines/autowrap_mode>`                                                         |
    +-------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`bool<class_bool>`       | :ref:`text_editor/appearance/lines/code_folding<class_EditorSettings_property_text_editor/appearance/lines/code_folding>`                                                           |
    +-------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -2581,6 +2585,20 @@ The size of the font in the **Output** panel at the bottom of the editor. This s
 
 ----
 
+.. _class_EditorSettings_property_run/window_placement/android_window:
+
+.. rst-class:: classref-property
+
+:ref:`int<class_int>` **run/window_placement/android_window**
+
+The Android window to display the project on when starting the project from the editor.
+
+\ **Note:** Only available in the Android editor.
+
+.. rst-class:: classref-item-separator
+
+----
+
 .. _class_EditorSettings_property_run/window_placement/rect:
 
 .. rst-class:: classref-property
@@ -2756,6 +2774,18 @@ If ``true``, displays a gutter at the left containing icons for methods with sig
 :ref:`bool<class_bool>` **text_editor/appearance/gutters/show_line_numbers**
 
 If ``true``, displays line numbers in a gutter at the left.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_EditorSettings_property_text_editor/appearance/lines/autowrap_mode:
+
+.. rst-class:: classref-property
+
+:ref:`int<class_int>` **text_editor/appearance/lines/autowrap_mode**
+
+If :ref:`text_editor/appearance/lines/word_wrap<class_EditorSettings_property_text_editor/appearance/lines/word_wrap>` is set to ``1``, sets text wrapping mode. To see how each mode behaves, see :ref:`AutowrapMode<enum_TextServer_AutowrapMode>`.
 
 .. rst-class:: classref-item-separator
 
@@ -3888,3 +3918,4 @@ Sets the ``value`` of the setting specified by ``name``. This is equivalent to u
 .. |constructor| replace:: :abbr:`constructor (This method is used to construct a type.)`
 .. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`
 .. |operator| replace:: :abbr:`operator (This method describes a valid operator to use with this type as left-hand operand.)`
+.. |bitfield| replace:: :abbr:`BitField (This value is an integer composed as a bitmask of the following flags.)`

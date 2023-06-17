@@ -24,17 +24,17 @@ Methods
 .. table::
    :widths: auto
 
-   +------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | void                                                             | :ref:`close_library<class_GDExtension_method_close_library>` **(** **)**                                                                                                                              |
-   +------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`InitializationLevel<enum_GDExtension_InitializationLevel>` | :ref:`get_minimum_library_initialization_level<class_GDExtension_method_get_minimum_library_initialization_level>` **(** **)** |const|                                                                |
-   +------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | void                                                             | :ref:`initialize_library<class_GDExtension_method_initialize_library>` **(** :ref:`InitializationLevel<enum_GDExtension_InitializationLevel>` level **)**                                             |
-   +------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`bool<class_bool>`                                          | :ref:`is_library_open<class_GDExtension_method_is_library_open>` **(** **)** |const|                                                                                                                  |
-   +------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`Error<enum_@GlobalScope_Error>`                            | :ref:`open_library<class_GDExtension_method_open_library>` **(** :ref:`String<class_String>` path, :ref:`String<class_String>` entry_symbol, :ref:`bool<class_bool>` use_legacy_interface=false **)** |
-   +------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   +------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | void                                                             | :ref:`close_library<class_GDExtension_method_close_library>` **(** **)**                                                                                  |
+   +------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`InitializationLevel<enum_GDExtension_InitializationLevel>` | :ref:`get_minimum_library_initialization_level<class_GDExtension_method_get_minimum_library_initialization_level>` **(** **)** |const|                    |
+   +------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | void                                                             | :ref:`initialize_library<class_GDExtension_method_initialize_library>` **(** :ref:`InitializationLevel<enum_GDExtension_InitializationLevel>` level **)** |
+   +------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`                                          | :ref:`is_library_open<class_GDExtension_method_is_library_open>` **(** **)** |const|                                                                      |
+   +------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`Error<enum_@GlobalScope_Error>`                            | :ref:`open_library<class_GDExtension_method_open_library>` **(** :ref:`String<class_String>` path, :ref:`String<class_String>` entry_symbol **)**         |
+   +------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 .. rst-class:: classref-section-separator
 
@@ -152,7 +152,7 @@ void **initialize_library** **(** :ref:`InitializationLevel<enum_GDExtension_Ini
 
 .. rst-class:: classref-method
 
-:ref:`Error<enum_@GlobalScope_Error>` **open_library** **(** :ref:`String<class_String>` path, :ref:`String<class_String>` entry_symbol, :ref:`bool<class_bool>` use_legacy_interface=false **)**
+:ref:`Error<enum_@GlobalScope_Error>` **open_library** **(** :ref:`String<class_String>` path, :ref:`String<class_String>` entry_symbol **)**
 
 .. container:: contribute
 
@@ -164,3 +164,4 @@ void **initialize_library** **(** :ref:`InitializationLevel<enum_GDExtension_Ini
 .. |constructor| replace:: :abbr:`constructor (This method is used to construct a type.)`
 .. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`
 .. |operator| replace:: :abbr:`operator (This method describes a valid operator to use with this type as left-hand operand.)`
+.. |bitfield| replace:: :abbr:`BitField (This value is an integer composed as a bitmask of the following flags.)`
