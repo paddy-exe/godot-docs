@@ -185,7 +185,7 @@ Methods
    +-----------------------------------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`Variant<class_Variant>`                                                                 | :ref:`gui_get_drag_data<class_Viewport_method_gui_get_drag_data>` **(** **)** |const|                                                                                                                                                                                  |
    +-----------------------------------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | :ref:`Control<class_Control>`                                                                 | :ref:`gui_get_focus_owner<class_Viewport_method_gui_get_focus_owner>` **(** **)**                                                                                                                                                                                      |
+   | :ref:`Control<class_Control>`                                                                 | :ref:`gui_get_focus_owner<class_Viewport_method_gui_get_focus_owner>` **(** **)** |const|                                                                                                                                                                              |
    +-----------------------------------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`bool<class_bool>`                                                                       | :ref:`gui_is_drag_successful<class_Viewport_method_gui_is_drag_successful>` **(** **)** |const|                                                                                                                                                                        |
    +-----------------------------------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -1938,7 +1938,7 @@ Returns the drag data from the GUI, that was previously returned by :ref:`Contro
 
 .. rst-class:: classref-method
 
-:ref:`Control<class_Control>` **gui_get_focus_owner** **(** **)**
+:ref:`Control<class_Control>` **gui_get_focus_owner** **(** **)** |const|
 
 Returns the :ref:`Control<class_Control>` having the focus within this viewport. If no :ref:`Control<class_Control>` has the focus, returns null.
 
@@ -2070,7 +2070,7 @@ If none of the methods handle the event and :ref:`physics_object_picking<class_V
 
 \ **Note:** This method doesn't propagate input events to embedded :ref:`Window<class_Window>`\ s or :ref:`SubViewport<class_SubViewport>`\ s.
 
-\ **Note:** This method is deprecated, use :ref:`push_input<class_Viewport_method_push_input>` instead.
+\ *Deprecated.* Use :ref:`push_input<class_Viewport_method_push_input>` instead.
 
 .. rst-class:: classref-item-separator
 
@@ -2142,3 +2142,4 @@ Moves the mouse pointer to the specified position in this **Viewport** using the
 .. |constructor| replace:: :abbr:`constructor (This method is used to construct a type.)`
 .. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`
 .. |operator| replace:: :abbr:`operator (This method describes a valid operator to use with this type as left-hand operand.)`
+.. |bitfield| replace:: :abbr:`BitField (This value is an integer composed as a bitmask of the following flags.)`
