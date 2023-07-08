@@ -43,7 +43,7 @@ Properties
    +-----------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------+------------------------------------------------------------------------------+
    | :ref:`HorizontalAlignment<enum_@GlobalScope_HorizontalAlignment>`           | :ref:`horizontal_alignment<class_Label_property_horizontal_alignment>`                                   | ``0``                                                                        |
    +-----------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------+------------------------------------------------------------------------------+
-   | :ref:`JustificationFlag<enum_TextServer_JustificationFlag>`                 | :ref:`justification_flags<class_Label_property_justification_flags>`                                     | ``163``                                                                      |
+   | |bitfield|\<:ref:`JustificationFlag<enum_TextServer_JustificationFlag>`\>   | :ref:`justification_flags<class_Label_property_justification_flags>`                                     | ``163``                                                                      |
    +-----------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------+------------------------------------------------------------------------------+
    | :ref:`LabelSettings<class_LabelSettings>`                                   | :ref:`label_settings<class_Label_property_label_settings>`                                               |                                                                              |
    +-----------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------+------------------------------------------------------------------------------+
@@ -55,11 +55,13 @@ Properties
    +-----------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------+------------------------------------------------------------------------------+
    | :ref:`MouseFilter<enum_Control_MouseFilter>`                                | mouse_filter                                                                                             | ``2`` (overrides :ref:`Control<class_Control_property_mouse_filter>`)        |
    +-----------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------+------------------------------------------------------------------------------+
-   | :ref:`SizeFlags<enum_Control_SizeFlags>`                                    | size_flags_vertical                                                                                      | ``4`` (overrides :ref:`Control<class_Control_property_size_flags_vertical>`) |
+   | |bitfield|\<:ref:`SizeFlags<enum_Control_SizeFlags>`\>                      | size_flags_vertical                                                                                      | ``4`` (overrides :ref:`Control<class_Control_property_size_flags_vertical>`) |
    +-----------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------+------------------------------------------------------------------------------+
    | :ref:`StructuredTextParser<enum_TextServer_StructuredTextParser>`           | :ref:`structured_text_bidi_override<class_Label_property_structured_text_bidi_override>`                 | ``0``                                                                        |
    +-----------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------+------------------------------------------------------------------------------+
    | :ref:`Array<class_Array>`                                                   | :ref:`structured_text_bidi_override_options<class_Label_property_structured_text_bidi_override_options>` | ``[]``                                                                       |
+   +-----------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------+------------------------------------------------------------------------------+
+   | :ref:`PackedFloat32Array<class_PackedFloat32Array>`                         | :ref:`tab_stops<class_Label_property_tab_stops>`                                                         | ``PackedFloat32Array()``                                                     |
    +-----------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------+------------------------------------------------------------------------------+
    | :ref:`String<class_String>`                                                 | :ref:`text<class_Label_property_text>`                                                                   | ``""``                                                                       |
    +-----------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------+------------------------------------------------------------------------------+
@@ -192,12 +194,12 @@ Controls the text's horizontal alignment. Supports left, center, right, and fill
 
 .. rst-class:: classref-property
 
-:ref:`JustificationFlag<enum_TextServer_JustificationFlag>` **justification_flags** = ``163``
+|bitfield|\<:ref:`JustificationFlag<enum_TextServer_JustificationFlag>`\> **justification_flags** = ``163``
 
 .. rst-class:: classref-property-setget
 
-- void **set_justification_flags** **(** :ref:`JustificationFlag<enum_TextServer_JustificationFlag>` value **)**
-- :ref:`JustificationFlag<enum_TextServer_JustificationFlag>` **get_justification_flags** **(** **)**
+- void **set_justification_flags** **(** |bitfield|\<:ref:`JustificationFlag<enum_TextServer_JustificationFlag>`\> value **)**
+- |bitfield|\<:ref:`JustificationFlag<enum_TextServer_JustificationFlag>`\> **get_justification_flags** **(** **)**
 
 Line fill alignment rules. For more info see :ref:`JustificationFlag<enum_TextServer_JustificationFlag>`.
 
@@ -302,6 +304,23 @@ Set BiDi algorithm override for the structured text.
 - :ref:`Array<class_Array>` **get_structured_text_bidi_override_options** **(** **)**
 
 Set additional options for BiDi override.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_Label_property_tab_stops:
+
+.. rst-class:: classref-property
+
+:ref:`PackedFloat32Array<class_PackedFloat32Array>` **tab_stops** = ``PackedFloat32Array()``
+
+.. rst-class:: classref-property-setget
+
+- void **set_tab_stops** **(** :ref:`PackedFloat32Array<class_PackedFloat32Array>` value **)**
+- :ref:`PackedFloat32Array<class_PackedFloat32Array>` **get_tab_stops** **(** **)**
+
+Aligns text to the given tab-stops.
 
 .. rst-class:: classref-item-separator
 
@@ -645,3 +664,4 @@ Background :ref:`StyleBox<class_StyleBox>` for the **Label**.
 .. |constructor| replace:: :abbr:`constructor (This method is used to construct a type.)`
 .. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`
 .. |operator| replace:: :abbr:`operator (This method describes a valid operator to use with this type as left-hand operand.)`
+.. |bitfield| replace:: :abbr:`BitField (This value is an integer composed as a bitmask of the following flags.)`
