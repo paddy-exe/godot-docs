@@ -389,7 +389,7 @@ The region of grid cells available for pathfinding. If changed, :ref:`update<cla
 
 The size of the grid (number of cells of size :ref:`cell_size<class_AStarGrid2D_property_cell_size>` on each axis). If changed, :ref:`update<class_AStarGrid2D_method_update>` needs to be called before finding the next path.
 
-\ **Note:** This property is deprecated, use :ref:`region<class_AStarGrid2D_property_region>` instead.
+\ *Deprecated.* Use :ref:`region<class_AStarGrid2D_property_region>` instead.
 
 .. rst-class:: classref-section-separator
 
@@ -582,3 +582,4 @@ Updates the internal state of the grid according to the parameters to prepare it
 .. |constructor| replace:: :abbr:`constructor (This method is used to construct a type.)`
 .. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`
 .. |operator| replace:: :abbr:`operator (This method describes a valid operator to use with this type as left-hand operand.)`
+.. |bitfield| replace:: :abbr:`BitField (This value is an integer composed as a bitmask of the following flags.)`
