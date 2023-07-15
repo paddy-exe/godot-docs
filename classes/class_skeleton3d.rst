@@ -359,6 +359,8 @@ void **force_update_all_bone_transforms** **(** **)**
 
 Force updates the bone transforms/poses for all bones in the skeleton.
 
+\ *Deprecated.* Do not use.
+
 .. rst-class:: classref-item-separator
 
 ----
@@ -805,3 +807,4 @@ Unparents the bone at ``bone_idx`` and sets its rest position to that of its par
 .. |constructor| replace:: :abbr:`constructor (This method is used to construct a type.)`
 .. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`
 .. |operator| replace:: :abbr:`operator (This method describes a valid operator to use with this type as left-hand operand.)`
+.. |bitfield| replace:: :abbr:`BitField (This value is an integer composed as a bitmask of the following flags.)`
