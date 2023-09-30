@@ -40,6 +40,8 @@ Properties
    +---------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`Dictionary<class_Dictionary>`               | :ref:`application/copyright_localized<class_EditorExportPlatformMacOS_property_application/copyright_localized>`                                               |
    +---------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`int<class_int>`                             | :ref:`application/export_angle<class_EditorExportPlatformMacOS_property_application/export_angle>`                                                             |
+   +---------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`String<class_String>`                       | :ref:`application/icon<class_EditorExportPlatformMacOS_property_application/icon>`                                                                             |
    +---------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`int<class_int>`                             | :ref:`application/icon_interpolation<class_EditorExportPlatformMacOS_property_application/icon_interpolation>`                                                 |
@@ -268,13 +270,25 @@ Copyright notice for the bundle visible to the user (localized).
 
 ----
 
+.. _class_EditorExportPlatformMacOS_property_application/export_angle:
+
+.. rst-class:: classref-property
+
+:ref:`int<class_int>` **application/export_angle**
+
+If set to ``1``, ANGLE libraries are exported with the exported application. If set to ``0``, ANGLE libraries are exported only if :ref:`ProjectSettings.rendering/gl_compatibility/driver<class_ProjectSettings_property_rendering/gl_compatibility/driver>` is set to ``"opengl3_angle"``.
+
+.. rst-class:: classref-item-separator
+
+----
+
 .. _class_EditorExportPlatformMacOS_property_application/icon:
 
 .. rst-class:: classref-property
 
 :ref:`String<class_String>` **application/icon**
 
-Application icon file. If left empty, it will fallback to :ref:`ProjectSettings.application/config/macos_native_icon<class_ProjectSettings_property_application/config/macos_native_icon>`, and  then to :ref:`ProjectSettings.application/config/icon<class_ProjectSettings_property_application/config/icon>`.
+Application icon file. If left empty, it will fallback to :ref:`ProjectSettings.application/config/macos_native_icon<class_ProjectSettings_property_application/config/macos_native_icon>`, and then to :ref:`ProjectSettings.application/config/icon<class_ProjectSettings_property_application/config/icon>`.
 
 .. rst-class:: classref-item-separator
 
@@ -310,7 +324,7 @@ Minimum version of macOS required for this application to run in the ``major.min
 
 :ref:`String<class_String>` **application/short_version**
 
-Application version visible to the user, can only contain numeric characters (``0-9``) and periods (``.``).
+Application version visible to the user, can only contain numeric characters (``0-9``) and periods (``.``). Falls back to :ref:`ProjectSettings.application/config/version<class_ProjectSettings_property_application/config/version>` if left empty.
 
 .. rst-class:: classref-item-separator
 
@@ -334,7 +348,7 @@ A four-character creator code that is specific to the bundle. Optional.
 
 :ref:`String<class_String>` **application/version**
 
-Machine-readable application version, in the ``major.minor.patch`` format, can only contain numeric characters (``0-9``) and periods (``.``).
+Machine-readable application version, in the ``major.minor.patch`` format, can only contain numeric characters (``0-9``) and periods (``.``). This must be incremented on every new release pushed to the App Store.
 
 .. rst-class:: classref-item-separator
 
@@ -426,7 +440,7 @@ Array of the additional command line arguments passed to the code signing tool.
 
 :ref:`bool<class_bool>` **codesign/entitlements/address_book**
 
-Enable to allow access to contacts in the user's address book, if it's enabled you should also provide usage message in the ``privacy/address_book_usage_description`` option.	See `com.apple.security.personal-information.addressbook <https://developer.apple.com/documentation/bundleresources/entitlements/com_apple_security_personal-information_addressbook>`__.
+Enable to allow access to contacts in the user's address book, if it's enabled you should also provide usage message in the ``privacy/address_book_usage_description`` option. See `com.apple.security.personal-information.addressbook <https://developer.apple.com/documentation/bundleresources/entitlements/com_apple_security_personal-information_addressbook>`__.
 
 .. rst-class:: classref-item-separator
 
@@ -790,7 +804,7 @@ If enabled, a wrapper that can be used to run the application with console outpu
 
 :ref:`bool<class_bool>` **display/high_res**
 
-If ``true``, the application is rendered at native display resolution, otherwise it is always rendered at loHPI resolution and upscaled by OS when required.
+If ``true``, the application is rendered at native display resolution, otherwise it is always rendered at loDPI resolution and upscaled by OS when required.
 
 .. rst-class:: classref-item-separator
 
