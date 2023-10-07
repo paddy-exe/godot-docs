@@ -12,18 +12,14 @@ ParticleProcessMaterial
 
 **Inherits:** :ref:`Material<class_Material>` **<** :ref:`Resource<class_Resource>` **<** :ref:`RefCounted<class_RefCounted>` **<** :ref:`Object<class_Object>`
 
-Particle properties for :ref:`GPUParticles3D<class_GPUParticles3D>` and :ref:`GPUParticles2D<class_GPUParticles2D>` nodes.
+Holds a particle configuration for :ref:`GPUParticles2D<class_GPUParticles2D>` or :ref:`GPUParticles3D<class_GPUParticles3D>` nodes.
 
 .. rst-class:: classref-introduction-group
 
 Description
 -----------
 
-ParticleProcessMaterial defines particle properties and behavior. It is used in the ``process_material`` of :ref:`GPUParticles3D<class_GPUParticles3D>` and :ref:`GPUParticles2D<class_GPUParticles2D>` emitter nodes.
-
-Some of this material's properties are applied to each particle when emitted, while others can have a :ref:`CurveTexture<class_CurveTexture>` applied to vary values over the lifetime of the particle.
-
-Particle animation is available only in :ref:`GPUParticles2D<class_GPUParticles2D>`. To use it, attach a :ref:`CanvasItemMaterial<class_CanvasItemMaterial>`, with :ref:`CanvasItemMaterial.particles_animation<class_CanvasItemMaterial_property_particles_animation>` enabled, to the particles node.
+**ParticleProcessMaterial** defines particle properties and behavior. It is used in the ``process_material`` of the :ref:`GPUParticles2D<class_GPUParticles2D>` and :ref:`GPUParticles3D<class_GPUParticles3D>` nodes. Some of this material's properties are applied to each particle when emitted, while others can have a :ref:`CurveTexture<class_CurveTexture>` or a :ref:`GradientTexture1D<class_GradientTexture1D>` applied to vary numerical or color values over the lifetime of the particle.
 
 .. rst-class:: classref-reftable-group
 
@@ -1010,7 +1006,7 @@ Unit vector specifying the particles' emission direction.
 - void **set_emission_box_extents** **(** :ref:`Vector3<class_Vector3>` value **)**
 - :ref:`Vector3<class_Vector3>` **get_emission_box_extents** **(** **)**
 
-The box's extents if ``emission_shape`` is set to :ref:`EMISSION_SHAPE_BOX<class_ParticleProcessMaterial_constant_EMISSION_SHAPE_BOX>`.
+The box's extents if :ref:`emission_shape<class_ParticleProcessMaterial_property_emission_shape>` is set to :ref:`EMISSION_SHAPE_BOX<class_ParticleProcessMaterial_constant_EMISSION_SHAPE_BOX>`.
 
 .. rst-class:: classref-item-separator
 
@@ -1063,7 +1059,7 @@ Particle velocity and rotation will be set by sampling this texture at the same 
 - void **set_emission_point_count** **(** :ref:`int<class_int>` value **)**
 - :ref:`int<class_int>` **get_emission_point_count** **(** **)**
 
-The number of emission points if ``emission_shape`` is set to :ref:`EMISSION_SHAPE_POINTS<class_ParticleProcessMaterial_constant_EMISSION_SHAPE_POINTS>` or :ref:`EMISSION_SHAPE_DIRECTED_POINTS<class_ParticleProcessMaterial_constant_EMISSION_SHAPE_DIRECTED_POINTS>`.
+The number of emission points if :ref:`emission_shape<class_ParticleProcessMaterial_property_emission_shape>` is set to :ref:`EMISSION_SHAPE_POINTS<class_ParticleProcessMaterial_constant_EMISSION_SHAPE_POINTS>` or :ref:`EMISSION_SHAPE_DIRECTED_POINTS<class_ParticleProcessMaterial_constant_EMISSION_SHAPE_DIRECTED_POINTS>`.
 
 .. rst-class:: classref-item-separator
 
@@ -1182,7 +1178,7 @@ Particles will be emitted inside this region. Use :ref:`EmissionShape<enum_Parti
 - void **set_emission_sphere_radius** **(** :ref:`float<class_float>` value **)**
 - :ref:`float<class_float>` **get_emission_sphere_radius** **(** **)**
 
-The sphere's radius if ``emission_shape`` is set to :ref:`EMISSION_SHAPE_SPHERE<class_ParticleProcessMaterial_constant_EMISSION_SHAPE_SPHERE>`.
+The sphere's radius if :ref:`emission_shape<class_ParticleProcessMaterial_property_emission_shape>` is set to :ref:`EMISSION_SHAPE_SPHERE<class_ParticleProcessMaterial_constant_EMISSION_SHAPE_SPHERE>`.
 
 .. rst-class:: classref-item-separator
 
