@@ -167,7 +167,7 @@ Implementing this method is required if :ref:`_begin_customize_resources<class_E
 
 Customize a scene. If changes are made to it, return the same or a new scene. Otherwise, return ``null``. If a new scene is returned, it is up to you to dispose of the old one.
 
-Implementing this method is required if :ref:`_begin_customize_resources<class_EditorExportPlugin_method__begin_customize_resources>` returns ``true``.
+Implementing this method is required if :ref:`_begin_customize_scenes<class_EditorExportPlugin_method__begin_customize_scenes>` returns ``true``.
 
 .. rst-class:: classref-item-separator
 
@@ -277,7 +277,7 @@ For more information see `Gradle documentation on dependency management <https:/
 
 Virtual method to be overridden by the user. This is called to retrieve the local paths of the Android libraries archive (AAR) files provided by this plugin.
 
-\ **Note:** Relative paths \*\*must\*\* be relative to Godot's ``res://addons/`` directory. For example, an AAR file located under ``res://addons/hello_world_plugin/HelloWorld.release.aar`` can be returned as an absolute path using ``res://addons/hello_world_plugin/HelloWorld.release.aar`` or a relative path using ``hello_world_plugin/HelloWorld.release.aar``.
+\ **Note:** Relative paths **must** be relative to Godot's ``res://addons/`` directory. For example, an AAR file located under ``res://addons/hello_world_plugin/HelloWorld.release.aar`` can be returned as an absolute path using ``res://addons/hello_world_plugin/HelloWorld.release.aar`` or a relative path using ``hello_world_plugin/HelloWorld.release.aar``.
 
 \ **Note:** Only supported on Android and requires :ref:`EditorExportPlatformAndroid.gradle_build/use_gradle_build<class_EditorExportPlatformAndroid_property_gradle_build/use_gradle_build>` to be enabled.
 
@@ -471,9 +471,9 @@ void **add_ios_embedded_framework** **(** :ref:`String<class_String>` path **)**
 
 Adds a dynamic library (\*.dylib, \*.framework) to Linking Phase in iOS's Xcode project and embeds it into resulting binary.
 
-\ **Note:** For static libraries (\*.a) works in same way as ``add_ios_framework``.
+\ **Note:** For static libraries (\*.a) works in same way as :ref:`add_ios_framework<class_EditorExportPlugin_method_add_ios_framework>`.
 
-This method should not be used for System libraries as they are already present on the device.
+\ **Note:** This method should not be used for System libraries as they are already present on the device.
 
 .. rst-class:: classref-item-separator
 
