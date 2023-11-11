@@ -191,6 +191,8 @@ Methods
    +-----------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`String<class_String>`                         | :ref:`replacen<class_String_method_replacen>` **(** :ref:`String<class_String>` what, :ref:`String<class_String>` forwhat **)** |const|                                            |
    +-----------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`String<class_String>`                         | :ref:`reverse<class_String_method_reverse>` **(** **)** |const|                                                                                                                    |
+   +-----------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`int<class_int>`                               | :ref:`rfind<class_String_method_rfind>` **(** :ref:`String<class_String>` what, :ref:`int<class_int>` from=-1 **)** |const|                                                        |
    +-----------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`int<class_int>`                               | :ref:`rfindn<class_String_method_rfindn>` **(** :ref:`String<class_String>` what, :ref:`int<class_int>` from=-1 **)** |const|                                                      |
@@ -1462,6 +1464,18 @@ Replaces all **case-insensitive** occurrences of ``what`` inside the string with
 
 ----
 
+.. _class_String_method_reverse:
+
+.. rst-class:: classref-method
+
+:ref:`String<class_String>` **reverse** **(** **)** |const|
+
+Returns the copy of this string in reverse order.
+
+.. rst-class:: classref-item-separator
+
+----
+
 .. _class_String_method_rfind:
 
 .. rst-class:: classref-method
@@ -1756,7 +1770,7 @@ Returns part of the string from the position ``from`` with length ``len``. If ``
 
 :ref:`PackedByteArray<class_PackedByteArray>` **to_ascii_buffer** **(** **)** |const|
 
-Converts the string to an `ASCII <https://en.wikipedia.org/wiki/ASCII>`__/Latin-1 encoded :ref:`PackedByteArray<class_PackedByteArray>`. This method is slightly faster than :ref:`to_utf8_buffer<class_String_method_to_utf8_buffer>`, but replaces all unsupported characters with spaces.
+Converts the string to an `ASCII <https://en.wikipedia.org/wiki/ASCII>`__/Latin-1 encoded :ref:`PackedByteArray<class_PackedByteArray>`. This method is slightly faster than :ref:`to_utf8_buffer<class_String_method_to_utf8_buffer>`, but replaces all unsupported characters with spaces. This is the inverse of :ref:`PackedByteArray.get_string_from_ascii<class_PackedByteArray_method_get_string_from_ascii>`.
 
 .. rst-class:: classref-item-separator
 
@@ -1867,7 +1881,7 @@ Returns the string converted to uppercase.
 
 :ref:`PackedByteArray<class_PackedByteArray>` **to_utf8_buffer** **(** **)** |const|
 
-Converts the string to a `UTF-8 <https://en.wikipedia.org/wiki/UTF-8>`__ encoded :ref:`PackedByteArray<class_PackedByteArray>`. This method is slightly slower than :ref:`to_ascii_buffer<class_String_method_to_ascii_buffer>`, but supports all UTF-8 characters. For most cases, prefer using this method.
+Converts the string to a `UTF-8 <https://en.wikipedia.org/wiki/UTF-8>`__ encoded :ref:`PackedByteArray<class_PackedByteArray>`. This method is slightly slower than :ref:`to_ascii_buffer<class_String_method_to_ascii_buffer>`, but supports all UTF-8 characters. For most cases, prefer using this method. This is the inverse of :ref:`PackedByteArray.get_string_from_utf8<class_PackedByteArray_method_get_string_from_utf8>`.
 
 .. rst-class:: classref-item-separator
 
@@ -1879,7 +1893,7 @@ Converts the string to a `UTF-8 <https://en.wikipedia.org/wiki/UTF-8>`__ encoded
 
 :ref:`PackedByteArray<class_PackedByteArray>` **to_utf16_buffer** **(** **)** |const|
 
-Converts the string to a `UTF-16 <https://en.wikipedia.org/wiki/UTF-16>`__ encoded :ref:`PackedByteArray<class_PackedByteArray>`.
+Converts the string to a `UTF-16 <https://en.wikipedia.org/wiki/UTF-16>`__ encoded :ref:`PackedByteArray<class_PackedByteArray>`. This is the inverse of :ref:`PackedByteArray.get_string_from_utf16<class_PackedByteArray_method_get_string_from_utf16>`.
 
 .. rst-class:: classref-item-separator
 
@@ -1891,7 +1905,7 @@ Converts the string to a `UTF-16 <https://en.wikipedia.org/wiki/UTF-16>`__ encod
 
 :ref:`PackedByteArray<class_PackedByteArray>` **to_utf32_buffer** **(** **)** |const|
 
-Converts the string to a `UTF-32 <https://en.wikipedia.org/wiki/UTF-32>`__ encoded :ref:`PackedByteArray<class_PackedByteArray>`.
+Converts the string to a `UTF-32 <https://en.wikipedia.org/wiki/UTF-32>`__ encoded :ref:`PackedByteArray<class_PackedByteArray>`. This is the inverse of :ref:`PackedByteArray.get_string_from_utf32<class_PackedByteArray_method_get_string_from_utf32>`.
 
 .. rst-class:: classref-item-separator
 
@@ -1903,7 +1917,7 @@ Converts the string to a `UTF-32 <https://en.wikipedia.org/wiki/UTF-32>`__ encod
 
 :ref:`PackedByteArray<class_PackedByteArray>` **to_wchar_buffer** **(** **)** |const|
 
-Converts the string to a `wide character <https://en.wikipedia.org/wiki/Wide_character>`__ (``wchar_t``, UTF-16 on Windows, UTF-32 on other platforms) encoded :ref:`PackedByteArray<class_PackedByteArray>`.
+Converts the string to a `wide character <https://en.wikipedia.org/wiki/Wide_character>`__ (``wchar_t``, UTF-16 on Windows, UTF-32 on other platforms) encoded :ref:`PackedByteArray<class_PackedByteArray>`. This is the inverse of :ref:`PackedByteArray.get_string_from_wchar<class_PackedByteArray_method_get_string_from_wchar>`.
 
 .. rst-class:: classref-item-separator
 
