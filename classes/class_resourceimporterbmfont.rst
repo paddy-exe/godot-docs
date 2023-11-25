@@ -12,9 +12,25 @@ ResourceImporterBMFont
 
 **Inherits:** :ref:`ResourceImporter<class_ResourceImporter>` **<** :ref:`RefCounted<class_RefCounted>` **<** :ref:`Object<class_Object>`
 
-.. container:: contribute
+Imports a bitmap font in the BMFont (``.fnt``) format.
 
-	There is currently no description for this class. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+.. rst-class:: classref-introduction-group
+
+Description
+-----------
+
+The BMFont format is a format created by the `BMFont <https://www.angelcode.com/products/bmfont/>`__ program. Many BMFont-compatible programs also exist, like `BMGlyph <https://www.bmglyph.com/>`__.
+
+Compared to :ref:`ResourceImporterImageFont<class_ResourceImporterImageFont>`, **ResourceImporterBMFont** supports bitmap fonts with varying glyph widths/heights.
+
+See also :ref:`ResourceImporterDynamicFont<class_ResourceImporterDynamicFont>`.
+
+.. rst-class:: classref-introduction-group
+
+Tutorials
+---------
+
+- `Bitmap fonts - Using fonts <../tutorials/ui/gui_using_fonts.html#bitmap-fonts>`__
 
 .. rst-class:: classref-reftable-group
 
@@ -24,11 +40,13 @@ Properties
 .. table::
    :widths: auto
 
-   +---------------------------+-------------------------------------------------------------------+----------+
-   | :ref:`bool<class_bool>`   | :ref:`compress<class_ResourceImporterBMFont_property_compress>`   | ``true`` |
-   +---------------------------+-------------------------------------------------------------------+----------+
-   | :ref:`Array<class_Array>` | :ref:`fallbacks<class_ResourceImporterBMFont_property_fallbacks>` | ``[]``   |
-   +---------------------------+-------------------------------------------------------------------+----------+
+   +---------------------------+-------------------------------------------------------------------------+----------+
+   | :ref:`bool<class_bool>`   | :ref:`compress<class_ResourceImporterBMFont_property_compress>`         | ``true`` |
+   +---------------------------+-------------------------------------------------------------------------+----------+
+   | :ref:`Array<class_Array>` | :ref:`fallbacks<class_ResourceImporterBMFont_property_fallbacks>`       | ``[]``   |
+   +---------------------------+-------------------------------------------------------------------------+----------+
+   | :ref:`int<class_int>`     | :ref:`scaling_mode<class_ResourceImporterBMFont_property_scaling_mode>` | ``2``    |
+   +---------------------------+-------------------------------------------------------------------------+----------+
 
 .. rst-class:: classref-section-separator
 
@@ -45,9 +63,7 @@ Property Descriptions
 
 :ref:`bool<class_bool>` **compress** = ``true``
 
-.. container:: contribute
-
-	There is currently no description for this property. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+If ``true``, uses lossless compression for the resulting font.
 
 .. rst-class:: classref-item-separator
 
@@ -59,9 +75,19 @@ Property Descriptions
 
 :ref:`Array<class_Array>` **fallbacks** = ``[]``
 
-.. container:: contribute
+List of font fallbacks to use if a glyph isn't found in this bitmap font. Fonts at the beginning of the array are attempted first.
 
-	There is currently no description for this property. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_ResourceImporterBMFont_property_scaling_mode:
+
+.. rst-class:: classref-property
+
+:ref:`int<class_int>` **scaling_mode** = ``2``
+
+Font scaling mode.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`
