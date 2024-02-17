@@ -1346,11 +1346,11 @@ Sets the given column's custom color.
 
 void **set_custom_draw** **(** :ref:`int<class_int>` column, :ref:`Object<class_Object>` object, :ref:`StringName<class_StringName>` callback **)**
 
+**Deprecated:** Use :ref:`set_custom_draw_callback<class_TreeItem_method_set_custom_draw_callback>` instead.
+
 Sets the given column's custom draw callback to ``callback`` method on ``object``.
 
 The ``callback`` should accept two arguments: the **TreeItem** that is drawn and its position and size as a :ref:`Rect2<class_Rect2>`.
-
-\ *Deprecated.* Use :ref:`set_custom_draw_callback<class_TreeItem_method_set_custom_draw_callback>` instead.
 
 .. rst-class:: classref-item-separator
 
@@ -1662,9 +1662,7 @@ Sets the given column's tooltip text.
 
 void **uncollapse_tree** **(** **)**
 
-.. container:: contribute
-
-	There is currently no description for this method. Please help us by :ref:`contributing one <doc_updating_the_class_reference>`!
+Uncollapses all **TreeItem**\ s necessary to reveal this **TreeItem**, i.e. all ancestor **TreeItem**\ s.
 
 .. |virtual| replace:: :abbr:`virtual (This method should typically be overridden by the user to have any effect.)`
 .. |const| replace:: :abbr:`const (This method has no side effects. It doesn't modify any of the instance's member variables.)`

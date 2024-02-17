@@ -584,6 +584,8 @@ Is ``true`` if this interface has been initialized.
 
 :ref:`bool<class_bool>` **is_passthrough_enabled** **(** **)**
 
+**Deprecated:** Check if :ref:`environment_blend_mode<class_XRInterface_property_environment_blend_mode>` is :ref:`XR_ENV_BLEND_MODE_ALPHA_BLEND<class_XRInterface_constant_XR_ENV_BLEND_MODE_ALPHA_BLEND>`, instead.
+
 Is ``true`` if passthrough is enabled.
 
 .. rst-class:: classref-item-separator
@@ -595,6 +597,8 @@ Is ``true`` if passthrough is enabled.
 .. rst-class:: classref-method
 
 :ref:`bool<class_bool>` **is_passthrough_supported** **(** **)**
+
+**Deprecated:** Check that :ref:`XR_ENV_BLEND_MODE_ALPHA_BLEND<class_XRInterface_constant_XR_ENV_BLEND_MODE_ALPHA_BLEND>` is supported using :ref:`get_supported_environment_blend_modes<class_XRInterface_method_get_supported_environment_blend_modes>`, instead.
 
 Is ``true`` if this interface supports passthrough.
 
@@ -652,6 +656,8 @@ Sets the active play area mode, will return ``false`` if the mode can't be used 
 
 :ref:`bool<class_bool>` **start_passthrough** **(** **)**
 
+**Deprecated:** Set the :ref:`environment_blend_mode<class_XRInterface_property_environment_blend_mode>` to :ref:`XR_ENV_BLEND_MODE_ALPHA_BLEND<class_XRInterface_constant_XR_ENV_BLEND_MODE_ALPHA_BLEND>`, instead.
+
 Starts passthrough, will return ``false`` if passthrough couldn't be started.
 
 \ **Note:** The viewport used for XR must have a transparent background, otherwise passthrough may not properly render.
@@ -665,6 +671,8 @@ Starts passthrough, will return ``false`` if passthrough couldn't be started.
 .. rst-class:: classref-method
 
 void **stop_passthrough** **(** **)**
+
+**Deprecated:** Set the :ref:`environment_blend_mode<class_XRInterface_property_environment_blend_mode>` to :ref:`XR_ENV_BLEND_MODE_OPAQUE<class_XRInterface_constant_XR_ENV_BLEND_MODE_OPAQUE>`, instead.
 
 Stops passthrough.
 
