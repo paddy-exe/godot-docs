@@ -19,11 +19,20 @@ A countdown timer.
 Description
 -----------
 
-Counts down a specified interval and emits a signal on reaching 0. Can be set to repeat or "one-shot" mode.
+The **Timer** node is a countdown timer and is the simplest way to handle time-based logic in the engine. When a timer reaches the end of its :ref:`wait_time<class_Timer_property_wait_time>`, it will emit the :ref:`timeout<class_Timer_signal_timeout>` signal.
 
-\ **Note:** Timers are affected by :ref:`Engine.time_scale<class_Engine_property_time_scale>`, a higher scale means quicker timeouts, and vice versa.
+After a timer enters the tree, it can be manually started with :ref:`start<class_Timer_method_start>`. A timer node is also started automatically if :ref:`autostart<class_Timer_property_autostart>` is ``true``.
+
+Without requiring much code, a timer node can be added and configured in the editor. The :ref:`timeout<class_Timer_signal_timeout>` signal it emits can also be connected through the Node dock in the editor:
+
+::
+
+    func _on_timer_timeout():
+        print("Time to attack!")
 
 \ **Note:** To create a one-shot timer without instantiating a node, use :ref:`SceneTree.create_timer<class_SceneTree_method_create_timer>`.
+
+\ **Note:** Timers are affected by :ref:`Engine.time_scale<class_Engine_property_time_scale>`. The higher the time scale, the sooner timers will end. How often a timer processes may depend on the framerate or :ref:`Engine.physics_ticks_per_second<class_Engine_property_physics_ticks_per_second>`.
 
 .. rst-class:: classref-introduction-group
 
@@ -62,13 +71,13 @@ Methods
 .. table::
    :widths: auto
 
-   +-------------------------+------------------------------------------------------------------------------------------+
-   | :ref:`bool<class_bool>` | :ref:`is_stopped<class_Timer_method_is_stopped>` **(** **)** |const|                     |
-   +-------------------------+------------------------------------------------------------------------------------------+
-   | void                    | :ref:`start<class_Timer_method_start>` **(** :ref:`float<class_float>` time_sec=-1 **)** |
-   +-------------------------+------------------------------------------------------------------------------------------+
-   | void                    | :ref:`stop<class_Timer_method_stop>` **(** **)**                                         |
-   +-------------------------+------------------------------------------------------------------------------------------+
+   +-------------------------+-----------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>` | :ref:`is_stopped<class_Timer_method_is_stopped>`\ (\ ) |const|                          |
+   +-------------------------+-----------------------------------------------------------------------------------------+
+   | |void|                  | :ref:`start<class_Timer_method_start>`\ (\ time_sec\: :ref:`float<class_float>` = -1\ ) |
+   +-------------------------+-----------------------------------------------------------------------------------------+
+   | |void|                  | :ref:`stop<class_Timer_method_stop>`\ (\ )                                              |
+   +-------------------------+-----------------------------------------------------------------------------------------+
 
 .. rst-class:: classref-section-separator
 
@@ -83,7 +92,7 @@ Signals
 
 .. rst-class:: classref-signal
 
-**timeout** **(** **)**
+**timeout**\ (\ )
 
 Emitted when the timer reaches the end.
 
@@ -135,8 +144,8 @@ Property Descriptions
 
 .. rst-class:: classref-property-setget
 
-- void **set_autostart** **(** :ref:`bool<class_bool>` value **)**
-- :ref:`bool<class_bool>` **has_autostart** **(** **)**
+- |void| **set_autostart**\ (\ value\: :ref:`bool<class_bool>`\ )
+- :ref:`bool<class_bool>` **has_autostart**\ (\ )
 
 If ``true``, the timer will start immediately when it enters the scene tree.
 
@@ -154,8 +163,8 @@ If ``true``, the timer will start immediately when it enters the scene tree.
 
 .. rst-class:: classref-property-setget
 
-- void **set_one_shot** **(** :ref:`bool<class_bool>` value **)**
-- :ref:`bool<class_bool>` **is_one_shot** **(** **)**
+- |void| **set_one_shot**\ (\ value\: :ref:`bool<class_bool>`\ )
+- :ref:`bool<class_bool>` **is_one_shot**\ (\ )
 
 If ``true``, the timer will stop after reaching the end. Otherwise, as by default, the timer will automatically restart.
 
@@ -171,8 +180,8 @@ If ``true``, the timer will stop after reaching the end. Otherwise, as by defaul
 
 .. rst-class:: classref-property-setget
 
-- void **set_paused** **(** :ref:`bool<class_bool>` value **)**
-- :ref:`bool<class_bool>` **is_paused** **(** **)**
+- |void| **set_paused**\ (\ value\: :ref:`bool<class_bool>`\ )
+- :ref:`bool<class_bool>` **is_paused**\ (\ )
 
 If ``true``, the timer is paused. A paused timer does not process until this property is set back to ``false``, even when :ref:`start<class_Timer_method_start>` is called.
 
@@ -188,8 +197,8 @@ If ``true``, the timer is paused. A paused timer does not process until this pro
 
 .. rst-class:: classref-property-setget
 
-- void **set_timer_process_callback** **(** :ref:`TimerProcessCallback<enum_Timer_TimerProcessCallback>` value **)**
-- :ref:`TimerProcessCallback<enum_Timer_TimerProcessCallback>` **get_timer_process_callback** **(** **)**
+- |void| **set_timer_process_callback**\ (\ value\: :ref:`TimerProcessCallback<enum_Timer_TimerProcessCallback>`\ )
+- :ref:`TimerProcessCallback<enum_Timer_TimerProcessCallback>` **get_timer_process_callback**\ (\ )
 
 Specifies when the timer is updated during the main loop (see :ref:`TimerProcessCallback<enum_Timer_TimerProcessCallback>`).
 
@@ -205,7 +214,7 @@ Specifies when the timer is updated during the main loop (see :ref:`TimerProcess
 
 .. rst-class:: classref-property-setget
 
-- :ref:`float<class_float>` **get_time_left** **(** **)**
+- :ref:`float<class_float>` **get_time_left**\ (\ )
 
 The timer's remaining time in seconds. This is always ``0`` if the timer is stopped.
 
@@ -223,8 +232,8 @@ The timer's remaining time in seconds. This is always ``0`` if the timer is stop
 
 .. rst-class:: classref-property-setget
 
-- void **set_wait_time** **(** :ref:`float<class_float>` value **)**
-- :ref:`float<class_float>` **get_wait_time** **(** **)**
+- |void| **set_wait_time**\ (\ value\: :ref:`float<class_float>`\ )
+- :ref:`float<class_float>` **get_wait_time**\ (\ )
 
 The time required for the timer to end, in seconds. This property can also be set every time :ref:`start<class_Timer_method_start>` is called.
 
@@ -243,7 +252,7 @@ Method Descriptions
 
 .. rst-class:: classref-method
 
-:ref:`bool<class_bool>` **is_stopped** **(** **)** |const|
+:ref:`bool<class_bool>` **is_stopped**\ (\ ) |const|
 
 Returns ``true`` if the timer is stopped or has not started.
 
@@ -255,7 +264,7 @@ Returns ``true`` if the timer is stopped or has not started.
 
 .. rst-class:: classref-method
 
-void **start** **(** :ref:`float<class_float>` time_sec=-1 **)**
+|void| **start**\ (\ time_sec\: :ref:`float<class_float>` = -1\ )
 
 Starts the timer, if it was not started already. Fails if the timer is not inside the tree. If ``time_sec`` is greater than ``0``, this value is used for the :ref:`wait_time<class_Timer_property_wait_time>`.
 
@@ -269,7 +278,7 @@ Starts the timer, if it was not started already. Fails if the timer is not insid
 
 .. rst-class:: classref-method
 
-void **stop** **(** **)**
+|void| **stop**\ (\ )
 
 Stops the timer.
 
@@ -280,3 +289,4 @@ Stops the timer.
 .. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`
 .. |operator| replace:: :abbr:`operator (This method describes a valid operator to use with this type as left-hand operand.)`
 .. |bitfield| replace:: :abbr:`BitField (This value is an integer composed as a bitmask of the following flags.)`
+.. |void| replace:: :abbr:`void (No return value.)`
