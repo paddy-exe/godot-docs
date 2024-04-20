@@ -146,7 +146,7 @@ Property Descriptions
 
 Additional data added to the root ``<dict>`` section of the `Info.plist <https://developer.apple.com/documentation/bundleresources/information_property_list>`__ file. The value should be an XML section with pairs of key-value elements, e.g.:
 
-::
+.. code:: text
 
     <key>key_name</key>
     <string>value</string>
@@ -730,3 +730,4 @@ If ``true``, the app "Documents" folder can be accessed via iTunes file sharing.
 .. |static| replace:: :abbr:`static (This method doesn't need an instance to be called, so it can be called directly using the class name.)`
 .. |operator| replace:: :abbr:`operator (This method describes a valid operator to use with this type as left-hand operand.)`
 .. |bitfield| replace:: :abbr:`BitField (This value is an integer composed as a bitmask of the following flags.)`
+.. |void| replace:: :abbr:`void (No return value.)`
