@@ -209,6 +209,8 @@ Methods
    +------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`bool<class_bool>`                                          | :ref:`is_node_ready<class_Node_method_is_node_ready>`\ (\ ) |const|                                                                                                                                                                     |
    +------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`                                          | :ref:`is_part_of_edited_scene<class_Node_method_is_part_of_edited_scene>`\ (\ ) |const|                                                                                                                                                 |
+   +------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`bool<class_bool>`                                          | :ref:`is_physics_interpolated<class_Node_method_is_physics_interpolated>`\ (\ ) |const|                                                                                                                                                 |
    +------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`bool<class_bool>`                                          | :ref:`is_physics_interpolated_and_enabled<class_Node_method_is_physics_interpolated_and_enabled>`\ (\ ) |const|                                                                                                                         |
@@ -1206,7 +1208,7 @@ The name of the node. This name must be unique among the siblings (other child n
 - |void| **set_owner**\ (\ value\: :ref:`Node<class_Node>`\ )
 - :ref:`Node<class_Node>` **get_owner**\ (\ )
 
-The owner of this node. The owner must be an ancestor of this node. When packing the owner node in a :ref:`PackedScene<class_PackedScene>`, all the nodes it owns are also saved with it. 
+The owner of this node. The owner must be an ancestor of this node. When packing the owner node in a :ref:`PackedScene<class_PackedScene>`, all the nodes it owns are also saved with it.
 
 \ **Note:** In the editor, nodes not owned by the scene root are usually not displayed in the Scene dock, and will **not** be saved. To prevent this, remember to set the owner after calling :ref:`add_child<class_Node_method_add_child>`. See also (see :ref:`unique_name_in_owner<class_Node_property_unique_name_in_owner>`)
 
@@ -2370,6 +2372,18 @@ Returns ``true`` if the local system is the multiplayer authority of this node.
 Returns ``true`` if the node is ready, i.e. it's inside scene tree and all its children are initialized.
 
 \ :ref:`request_ready<class_Node_method_request_ready>` resets it back to ``false``.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_Node_method_is_part_of_edited_scene:
+
+.. rst-class:: classref-method
+
+:ref:`bool<class_bool>` **is_part_of_edited_scene**\ (\ ) |const|
+
+Returns ``true`` if the node is part of the scene currently opened in the editor.
 
 .. rst-class:: classref-item-separator
 
