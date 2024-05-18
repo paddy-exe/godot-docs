@@ -391,7 +391,7 @@ Properties
    +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
    | :ref:`bool<class_bool>`                           | :ref:`display/window/energy_saving/keep_screen_on<class_ProjectSettings_property_display/window/energy_saving/keep_screen_on>`                                                                             | ``true``                                                                                         |
    +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
-   | :ref:`bool<class_bool>`                           | :ref:`display/window/energy_saving/keep_screen_on.editor<class_ProjectSettings_property_display/window/energy_saving/keep_screen_on.editor>`                                                               | ``false``                                                                                        |
+   | :ref:`bool<class_bool>`                           | :ref:`display/window/energy_saving/keep_screen_on.editor_hint<class_ProjectSettings_property_display/window/energy_saving/keep_screen_on.editor_hint>`                                                     | ``false``                                                                                        |
    +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
    | :ref:`int<class_int>`                             | :ref:`display/window/handheld/orientation<class_ProjectSettings_property_display/window/handheld/orientation>`                                                                                             | ``0``                                                                                            |
    +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
@@ -540,6 +540,8 @@ Properties
    | :ref:`float<class_float>`                         | :ref:`gui/timers/text_edit_idle_detect_sec<class_ProjectSettings_property_gui/timers/text_edit_idle_detect_sec>`                                                                                           | ``3``                                                                                            |
    +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
    | :ref:`float<class_float>`                         | :ref:`gui/timers/tooltip_delay_sec<class_ProjectSettings_property_gui/timers/tooltip_delay_sec>`                                                                                                           | ``0.5``                                                                                          |
+   +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
+   | :ref:`float<class_float>`                         | :ref:`gui/timers/tooltip_delay_sec.editor_hint<class_ProjectSettings_property_gui/timers/tooltip_delay_sec.editor_hint>`                                                                                   | ``0.5``                                                                                          |
    +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
    | :ref:`Dictionary<class_Dictionary>`               | :ref:`input/ui_accept<class_ProjectSettings_property_input/ui_accept>`                                                                                                                                     |                                                                                                  |
    +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
@@ -1493,7 +1495,7 @@ Properties
    +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
    | :ref:`String<class_String>`                       | :ref:`rendering/renderer/rendering_method.web<class_ProjectSettings_property_rendering/renderer/rendering_method.web>`                                                                                     | ``"gl_compatibility"``                                                                           |
    +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
-   | :ref:`int<class_int>`                             | :ref:`rendering/rendering_device/d3d12/agility_sdk_version<class_ProjectSettings_property_rendering/rendering_device/d3d12/agility_sdk_version>`                                                           | ``610``                                                                                          |
+   | :ref:`int<class_int>`                             | :ref:`rendering/rendering_device/d3d12/agility_sdk_version<class_ProjectSettings_property_rendering/rendering_device/d3d12/agility_sdk_version>`                                                           | ``613``                                                                                          |
    +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
    | :ref:`int<class_int>`                             | :ref:`rendering/rendering_device/d3d12/max_misc_descriptors_per_frame<class_ProjectSettings_property_rendering/rendering_device/d3d12/max_misc_descriptors_per_frame>`                                     | ``512``                                                                                          |
    +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
@@ -1596,6 +1598,8 @@ Properties
    | :ref:`int<class_int>`                             | :ref:`xr/openxr/environment_blend_mode<class_ProjectSettings_property_xr/openxr/environment_blend_mode>`                                                                                                   | ``"0"``                                                                                          |
    +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
    | :ref:`bool<class_bool>`                           | :ref:`xr/openxr/extensions/eye_gaze_interaction<class_ProjectSettings_property_xr/openxr/extensions/eye_gaze_interaction>`                                                                                 | ``false``                                                                                        |
+   +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`                           | :ref:`xr/openxr/extensions/hand_interaction_profile<class_ProjectSettings_property_xr/openxr/extensions/hand_interaction_profile>`                                                                         | ``false``                                                                                        |
    +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
    | :ref:`bool<class_bool>`                           | :ref:`xr/openxr/extensions/hand_tracking<class_ProjectSettings_property_xr/openxr/extensions/hand_tracking>`                                                                                               | ``true``                                                                                         |
    +---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
@@ -1747,6 +1751,8 @@ Path to an image used as the boot splash. If left empty, the default Godot Engin
 \ **Note:** Only effective if :ref:`application/boot_splash/show_image<class_ProjectSettings_property_application/boot_splash/show_image>` is ``true``.
 
 \ **Note:** The only supported format is PNG. Using another image format will result in an error.
+
+\ **Note:** The image will also show when opening the project in the editor. If you want to display the default splash image in the editor, add an empty override for ``editor_hint`` feature.
 
 .. rst-class:: classref-item-separator
 
@@ -2070,7 +2076,7 @@ This setting can be overridden using the ``--frame-delay <ms;>`` command line ar
 
 :ref:`bool<class_bool>` **application/run/low_processor_mode** = ``false``
 
-If ``true``, enables low-processor usage mode. This setting only works on desktop platforms. The screen is not redrawn if nothing changes visually. This is meant for writing applications and editors, but is pretty useless (and can hurt performance) in most games.
+If ``true``, enables low-processor usage mode. The screen is not redrawn if nothing changes visually. This is meant for writing applications and editors, but is pretty useless (and can hurt performance) in most games.
 
 .. rst-class:: classref-item-separator
 
@@ -2874,7 +2880,7 @@ When set to ``warn`` or ``error``, produces a warning or an error respectively w
 
 :ref:`int<class_int>` **debug/gdscript/warnings/standalone_expression** = ``1``
 
-When set to ``warn`` or ``error``, produces a warning or an error respectively when calling an expression that has no effect on the surrounding code, such as writing ``2 + 2`` as a statement.
+When set to ``warn`` or ``error``, produces a warning or an error respectively when calling an expression that may have no effect on the surrounding code, such as writing ``2 + 2`` as a statement.
 
 .. rst-class:: classref-item-separator
 
@@ -2886,7 +2892,7 @@ When set to ``warn`` or ``error``, produces a warning or an error respectively w
 
 :ref:`int<class_int>` **debug/gdscript/warnings/standalone_ternary** = ``1``
 
-When set to ``warn`` or ``error``, produces a warning or an error respectively when calling a ternary expression that has no effect on the surrounding code, such as writing ``42 if active else 0`` as a statement.
+When set to ``warn`` or ``error``, produces a warning or an error respectively when calling a ternary expression that may have no effect on the surrounding code, such as writing ``42 if active else 0`` as a statement.
 
 .. rst-class:: classref-item-separator
 
@@ -3844,13 +3850,13 @@ If ``true``, keeps the screen on (even in case of inactivity), so the screensave
 
 ----
 
-.. _class_ProjectSettings_property_display/window/energy_saving/keep_screen_on.editor:
+.. _class_ProjectSettings_property_display/window/energy_saving/keep_screen_on.editor_hint:
 
 .. rst-class:: classref-property
 
-:ref:`bool<class_bool>` **display/window/energy_saving/keep_screen_on.editor** = ``false``
+:ref:`bool<class_bool>` **display/window/energy_saving/keep_screen_on.editor_hint** = ``false``
 
-Editor-only override for :ref:`display/window/energy_saving/keep_screen_on<class_ProjectSettings_property_display/window/energy_saving/keep_screen_on>`. Does not affect exported projects in debug or release mode.
+Editor-only override for :ref:`display/window/energy_saving/keep_screen_on<class_ProjectSettings_property_display/window/energy_saving/keep_screen_on>`. Does not affect running project.
 
 .. rst-class:: classref-item-separator
 
@@ -4857,6 +4863,18 @@ Timer for detecting idle in :ref:`TextEdit<class_TextEdit>` (in seconds).
 :ref:`float<class_float>` **gui/timers/tooltip_delay_sec** = ``0.5``
 
 Default delay for tooltips (in seconds).
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_ProjectSettings_property_gui/timers/tooltip_delay_sec.editor_hint:
+
+.. rst-class:: classref-property
+
+:ref:`float<class_float>` **gui/timers/tooltip_delay_sec.editor_hint** = ``0.5``
+
+Delay for tooltips in the editor.
 
 .. rst-class:: classref-item-separator
 
@@ -10992,9 +11010,9 @@ Override for :ref:`rendering/renderer/rendering_method<class_ProjectSettings_pro
 
 .. rst-class:: classref-property
 
-:ref:`int<class_int>` **rendering/rendering_device/d3d12/agility_sdk_version** = ``610``
+:ref:`int<class_int>` **rendering/rendering_device/d3d12/agility_sdk_version** = ``613``
 
-Version code of the Direct3D 12 Agility SDK to use (``D3D12SDKVersion``).
+Version code of the `Direct3D 12 Agility SDK <https://devblogs.microsoft.com/directx/directx12agility/>`__ to use (``D3D12SDKVersion``). This must match the *minor* version that is installed next to the editor binary and in the export templates directory for the current editor version. For example, if you have ``1.613.3`` installed, you need to input ``613`` here.
 
 .. rst-class:: classref-item-separator
 
@@ -11690,6 +11708,18 @@ Specify how OpenXR should blend in the environment. This is specific to certain 
 :ref:`bool<class_bool>` **xr/openxr/extensions/eye_gaze_interaction** = ``false``
 
 Specify whether to enable eye tracking for this project. Depending on the platform, additional export configuration may be needed.
+
+.. rst-class:: classref-item-separator
+
+----
+
+.. _class_ProjectSettings_property_xr/openxr/extensions/hand_interaction_profile:
+
+.. rst-class:: classref-property
+
+:ref:`bool<class_bool>` **xr/openxr/extensions/hand_interaction_profile** = ``false``
+
+If true the hand interaction profile extension will be activated if supported by the platform.
 
 .. rst-class:: classref-item-separator
 
