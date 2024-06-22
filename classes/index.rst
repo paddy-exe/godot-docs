@@ -701,6 +701,8 @@ Other objects
     class_astargrid2d
     class_audioeffectinstance
     class_audioeffectspectrumanalyzerinstance
+    class_audiosample
+    class_audiosampleplayback
     class_audioserver
     class_audiostreamgeneratorplayback
     class_audiostreamplayback
@@ -767,7 +769,6 @@ Other objects
     class_gdextensionmanager
     class_geometry2d
     class_geometry3d
-    class_godotsharp
     class_hashingcontext
     class_hmaccontext
     class_httpclient
