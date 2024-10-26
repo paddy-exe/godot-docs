@@ -194,6 +194,8 @@ Methods
    +-------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`bool<class_bool>`                                                 | :ref:`has_feature<class_DisplayServer_method_has_feature>`\ (\ feature\: :ref:`Feature<enum_DisplayServer_Feature>`\ ) |const|                                                                                                                                                                                                                                                                                                                                                                                                                                      |
    +-------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+   | :ref:`bool<class_bool>`                                                 | :ref:`has_hardware_keyboard<class_DisplayServer_method_has_hardware_keyboard>`\ (\ ) |const|                                                                                                                                                                                                                                                                                                                                                                                                                                                                        |
+   +-------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | |void|                                                                  | :ref:`help_set_search_callbacks<class_DisplayServer_method_help_set_search_callbacks>`\ (\ search_callback\: :ref:`Callable<class_Callable>`, action_callback\: :ref:`Callable<class_Callable>`\ )                                                                                                                                                                                                                                                                                                                                                                  |
    +-------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
    | :ref:`Vector2i<class_Vector2i>`                                         | :ref:`ime_get_selection<class_DisplayServer_method_ime_get_selection>`\ (\ ) |const|                                                                                                                                                                                                                                                                                                                                                                                                                                                                                |
@@ -1060,6 +1062,8 @@ Full screen mode with full multi-window support.
 
 Full screen window covers the entire display area of a screen and has no decorations. The display's video mode is not changed.
 
+\ **On Android:** This enables immersive mode.
+
 \ **On Windows:** Multi-window full-screen mode has a 1px border of the :ref:`ProjectSettings.rendering/environment/defaults/default_clear_color<class_ProjectSettings_property_rendering/environment/defaults/default_clear_color>` color.
 
 \ **On macOS:** A new desktop is used to display the running project.
@@ -1075,6 +1079,8 @@ Full screen window covers the entire display area of a screen and has no decorat
 A single window full screen mode. This mode has less overhead, but only one window can be open on a given screen at a time (opening a child window or application switching will trigger a full screen transition).
 
 Full screen window covers the entire display area of a screen and has no border or decorations. The display's video mode is not changed.
+
+\ **On Android:** This enables immersive mode.
 
 \ **On Windows:** Depending on video driver, full screen transition might cause screens to go black for a moment.
 
@@ -1168,11 +1174,21 @@ Use :ref:`window_get_safe_title_margins<class_DisplayServer_method_window_get_sa
 
 All mouse events are passed to the underlying window of the same application.
 
+.. _class_DisplayServer_constant_WINDOW_FLAG_SHARP_CORNERS:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`WindowFlags<enum_DisplayServer_WindowFlags>` **WINDOW_FLAG_SHARP_CORNERS** = ``8``
+
+Window style is overridden, forcing sharp corners.
+
+\ **Note:** This flag is implemented only on Windows (11).
+
 .. _class_DisplayServer_constant_WINDOW_FLAG_MAX:
 
 .. rst-class:: classref-enumeration-constant
 
-:ref:`WindowFlags<enum_DisplayServer_WindowFlags>` **WINDOW_FLAG_MAX** = ``8``
+:ref:`WindowFlags<enum_DisplayServer_WindowFlags>` **WINDOW_FLAG_MAX** = ``9``
 
 Max value of the :ref:`WindowFlags<enum_DisplayServer_WindowFlags>`.
 
@@ -1320,6 +1336,8 @@ Display handle:
 
 - Linux (X11): ``X11::Display*`` for the display.
 
+- Linux (Wayland): ``wl_display`` for the display.
+
 - Android: ``EGLDisplay`` for the display.
 
 .. _class_DisplayServer_constant_WINDOW_HANDLE:
@@ -1333,6 +1351,8 @@ Window handle:
 - Windows: ``HWND`` for the window.
 
 - Linux (X11): ``X11::Window*`` for the window.
+
+- Linux (Wayland): ``wl_surface`` for the window.
 
 - macOS: ``NSWindow*`` for the window.
 
@@ -1366,9 +1386,35 @@ OpenGL context (only with the GL Compatibility renderer):
 
 - Linux (X11): ``GLXContext*`` for the window.
 
+- Linux (Wayland): ``EGLContext`` for the window.
+
 - macOS: ``NSOpenGLContext*`` for the window (native GL), or ``EGLContext`` for the window (ANGLE).
 
 - Android: ``EGLContext`` for the window.
+
+.. _class_DisplayServer_constant_EGL_DISPLAY:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`HandleType<enum_DisplayServer_HandleType>` **EGL_DISPLAY** = ``4``
+
+- Windows: ``EGLDisplay`` for the window (ANGLE).
+
+- macOS: ``EGLDisplay`` for the window (ANGLE).
+
+- Linux (Wayland): ``EGLDisplay`` for the window.
+
+.. _class_DisplayServer_constant_EGL_CONFIG:
+
+.. rst-class:: classref-enumeration-constant
+
+:ref:`HandleType<enum_DisplayServer_HandleType>` **EGL_CONFIG** = ``5``
+
+- Windows: ``EGLConfig`` for the window (ANGLE).
+
+- macOS: ``EGLConfig`` for the window (ANGLE).
+
+- Linux (Wayland): ``EGLConfig`` for the window.
 
 .. rst-class:: classref-item-separator
 
@@ -2907,6 +2953,20 @@ Returns ``true`` if the specified ``feature`` is supported by the current **Disp
 
 ----
 
+.. _class_DisplayServer_method_has_hardware_keyboard:
+
+.. rst-class:: classref-method
+
+:ref:`bool<class_bool>` **has_hardware_keyboard**\ (\ ) |const| :ref:`🔗<class_DisplayServer_method_has_hardware_keyboard>`
+
+Returns ``true`` if hardware keyboard is connected.
+
+\ **Note:** This method is implemented on Android and iOS, on other platforms this method always returns ``true``.
+
+.. rst-class:: classref-item-separator
+
+----
+
 .. _class_DisplayServer_method_help_set_search_callbacks:
 
 .. rst-class:: classref-method
@@ -4257,6 +4317,8 @@ Sets the minimum size for the given window to ``min_size`` in pixels. Normally, 
 
 Sets window mode for the given window to ``mode``. See :ref:`WindowMode<enum_DisplayServer_WindowMode>` for possible values and how each mode behaves.
 
+\ **Note:** On Android, setting it to :ref:`WINDOW_MODE_FULLSCREEN<class_DisplayServer_constant_WINDOW_MODE_FULLSCREEN>` or :ref:`WINDOW_MODE_EXCLUSIVE_FULLSCREEN<class_DisplayServer_constant_WINDOW_MODE_EXCLUSIVE_FULLSCREEN>` will enable immersive mode.
+
 \ **Note:** Setting the window to full screen forcibly sets the borderless flag to ``true``, so make sure to set it back to ``false`` when not wanted.
 
 .. rst-class:: classref-item-separator
@@ -4397,7 +4459,7 @@ Sets the title of the given window to ``title``.
 
 |void| **window_set_transient**\ (\ window_id\: :ref:`int<class_int>`, parent_window_id\: :ref:`int<class_int>`\ ) :ref:`🔗<class_DisplayServer_method_window_set_transient>`
 
-Sets window transient parent. Transient window is will be destroyed with its transient parent and will return focus to their parent when closed. The transient window is displayed on top of a non-exclusive full-screen parent window. Transient windows can't enter full-screen mode.
+Sets window transient parent. Transient window will be destroyed with its transient parent and will return focus to their parent when closed. The transient window is displayed on top of a non-exclusive full-screen parent window. Transient windows can't enter full-screen mode.
 
 \ **Note:** It's recommended to change this value using :ref:`Window.transient<class_Window_property_transient>` instead.
 
