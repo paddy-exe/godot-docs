@@ -100,6 +100,7 @@ Nodes
     class_editorresourcepreview
     class_editorscriptpicker
     class_editorspinslider
+    class_editortoaster
     class_filedialog
     class_filesystemdock
     class_flowcontainer
@@ -147,6 +148,7 @@ Nodes
     class_line2d
     class_lineedit
     class_linkbutton
+    class_lookatmodifier3d
     class_margincontainer
     class_marker2d
     class_marker3d
@@ -177,6 +179,7 @@ Nodes
     class_openxrcompositionlayerequirect
     class_openxrcompositionlayerquad
     class_openxrhand
+    class_openxrvisibilitymask
     class_optionbutton
     class_panel
     class_panelcontainer
@@ -397,6 +400,7 @@ Resources
     class_editorsettings
     class_editorsyntaxhighlighter
     class_environment
+    class_externaltexture
     class_fastnoiselite
     class_fbxdocument
     class_fbxstate
@@ -406,6 +410,7 @@ Resources
     class_fontvariation
     class_gdextension
     class_gdscript
+    class_gdscriptsyntaxhighlighter
     class_gltfaccessor
     class_gltfanimation
     class_gltfbufferview
@@ -722,10 +727,12 @@ Other objects
     class_diraccess
     class_displayserver
     class_dtlsserver
+    class_editorcontextmenuplugin
     class_editordebuggerplugin
     class_editordebuggersession
     class_editorexportplatform
     class_editorexportplatformandroid
+    class_editorexportplatformextension
     class_editorexportplatformios
     class_editorexportplatformlinuxbsd
     class_editorexportplatformmacos
@@ -733,6 +740,7 @@ Other objects
     class_editorexportplatformweb
     class_editorexportplatformwindows
     class_editorexportplugin
+    class_editorexportpreset
     class_editorfeatureprofile
     class_editorfilesystemdirectory
     class_editorfilesystemimportformatsupportquery
@@ -769,6 +777,7 @@ Other objects
     class_gdextensionmanager
     class_geometry2d
     class_geometry3d
+    class_gltfobjectmodelproperty
     class_hashingcontext
     class_hmaccontext
     class_httpclient
@@ -780,6 +789,7 @@ Other objects
     class_ip
     class_javaclass
     class_javaclasswrapper
+    class_javaobject
     class_javascriptbridge
     class_javascriptobject
     class_jnisingleton
@@ -933,6 +943,7 @@ Other objects
     class_tiledata
     class_time
     class_tlsoptions
+    class_translationdomain
     class_translationserver
     class_treeitem
     class_trianglemesh
@@ -976,10 +987,12 @@ Editor-only
     :name: toc-class-ref-editors
 
     class_editorcommandpalette
+    class_editorcontextmenuplugin
     class_editordebuggerplugin
     class_editordebuggersession
     class_editorexportplatform
     class_editorexportplatformandroid
+    class_editorexportplatformextension
     class_editorexportplatformios
     class_editorexportplatformlinuxbsd
     class_editorexportplatformmacos
@@ -987,6 +1000,7 @@ Editor-only
     class_editorexportplatformweb
     class_editorexportplatformwindows
     class_editorexportplugin
+    class_editorexportpreset
     class_editorfeatureprofile
     class_editorfiledialog
     class_editorfilesystem
@@ -1019,6 +1033,7 @@ Editor-only
     class_editorsettings
     class_editorspinslider
     class_editorsyntaxhighlighter
+    class_editortoaster
     class_editortranslationparserplugin
     class_editorundoredomanager
     class_editorvcsinterface
