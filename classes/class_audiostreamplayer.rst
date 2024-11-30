@@ -276,6 +276,7 @@ The playback type of the stream player. If set other than to the default value, 
 
 .. rst-class:: classref-property-setget
 
+- |void| **set_playing**\ (\ value\: :ref:`bool<class_bool>`\ )
 - :ref:`bool<class_bool>` **is_playing**\ (\ )
 
 If ``true``, this node is playing sounds. Setting this property has the same effect as :ref:`play<class_AudioStreamPlayer_method_play>` and :ref:`stop<class_AudioStreamPlayer_method_stop>`.
@@ -353,6 +354,8 @@ Method Descriptions
 Returns the position in the :ref:`AudioStream<class_AudioStream>` of the latest sound, in seconds. Returns ``0.0`` if no sounds are playing.
 
 \ **Note:** The position is not always accurate, as the :ref:`AudioServer<class_AudioServer>` does not mix audio every processed frame. To get more accurate results, add :ref:`AudioServer.get_time_since_last_mix<class_AudioServer_method_get_time_since_last_mix>` to the returned position.
+
+\ **Note:** This method always returns ``0.0`` if the :ref:`stream<class_AudioStreamPlayer_property_stream>` is an :ref:`AudioStreamInteractive<class_AudioStreamInteractive>`, since it can have multiple clips playing at once.
 
 .. rst-class:: classref-item-separator
 
